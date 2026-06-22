@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Focuswall",
+  "version": "1.2",
+  "description": "Tu peor pesadilla cuando procrastinas.",
+  "icons": {
+    "128": "icon.png"
+  },
+  "permissions": ["storage", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "menu.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["castigo.js"],
+      "all_frames": true
+    }
+  ]
+}
